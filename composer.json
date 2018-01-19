@@ -1,0 +1,15 @@
+{
+	"description": "Projeto mais amigas",
+	"name": "codeigniter/framework",
+	"type": "Projeto mais amigas",
+	"homepage": "http://www.maisamigas.com.br",
+	"license": "MIT",
+	"require": {
+		"php": ">=5.3.7"
+	},
+	"suggest": {
+		"paragonie/random_compat": "Provides better randomness in PHP 5.x"
+	},
+	"require-dev": {
+	}
+}
