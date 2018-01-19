@@ -21,10 +21,10 @@
 
          <h5 class="my-0 mr-md-auto font-weight-normal"><img src="<?php echo base_url('public/images/logo.png') ?>"></h5>
          <nav class="my-2 my-md-0 mr-md-3">
-            <a class="p-2 text-dark" href="#">Home</a>
-            <a class="p-2 text-dark" href="#">Produtos</a>
-            <a class="p-2 text-dark" href="#">Sobre</a>
-            <a class="p-2 text-dark" href="#">Contato</a>
+            <a class="p-2 text-dark" href="<?php echo base_url('home')?>">Home</a>
+            <a class="p-2 text-dark" href="<?php echo base_url('produtos')?>">Produtos</a>
+            <a class="p-2 text-dark" href="<?php echo base_url('sbore')?>">Sobre</a>
+            <a class="p-2 text-dark" href="<?php echo base_url('contato')?>">Contato</a>
          </nav>
          <a class="btn btn-outline-primary boxLogar" href="javascript:;">Logar</a>
 
