@@ -12,19 +12,18 @@
       </script>
    <?php endif; ?>
 
-   <div class="">
+   <div class="col-md-12">
       <?php if ($this->cart->contents()): ?>
+         <?php echo form_open('carrinho/checkout') ?>
          <table class="table table-bordered table-striped">
             <thead>
-               <th class="col-md-7">Produto</th>
-               <th align="center" class="col-md-1">QTD.</th>
-               <th class="col-md-1"></th>
+            <th class="col-md-7">Produto</th>
+            <th align="center" class="col-md-1">QTD.</th>
+            <th class="col-md-1"></th>
             </thead>
             <tbody>
+
                <?php foreach ($this->cart->contents() as $item): ?>
-                  <?php echo form_hidden('carrinho[id_produto][]', $item['id']); ?>
-                  <?php echo form_hidden('carrinho[produto][]', $item['name']); ?>
-                  <?php echo form_hidden('carrinho[quantidade][]', $item['qty']); ?>
                   <tr>
                      <td><?php echo $item['name']; ?></td>
                      <td align="middle"><?php echo $item['qty']; ?></td>
@@ -33,6 +32,8 @@
                <?php endforeach; ?>
             </tbody>
          </table>
+         <button type="submit" class="btn btn-lg btn-block btn-success"><i class="fa fa-cart-plus" aria-hidden="true"></i> Fechar Pedido</button>
+         <?php echo form_close() ?>
       <?php else: ?>
          <p class="alert alert-danger">Carrinho vazio.</p>
       <?php endif; ?>

@@ -4,19 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Produto extends CI_Controller {
 
-   public function index() {
-      $header['title'] = 'Mais Amigas | Produto';
-      $header['description'] = 'Produto';
-      $this->load->view('header', $header);
-      
-     
-      //CONTENT DA PÁGINA (HOME)
-      $this->load->view('produto', $data);
-      $this->load->view('footer');
-   }
-
    public function apiProdutosBusca() {
-      $url = "https://api.github.com/users/".$this->input->post('login');
+      $url = "https://api.github.com/users/" . $this->input->post('login');
       $opts = [
           'http' => [
               'method' => 'GET',
@@ -26,6 +15,18 @@ class Produto extends CI_Controller {
           ]
       ];
 
-      var_dump(file_get_contents($url, false, stream_context_create($opts)));
+      $json = json_decode(file_get_contents($url, false, stream_context_create($opts)));
+
+      $header['title'] = 'Produto ' . $json->login;
+      $header['description'] = 'Confira nossos produtos';
+      $this->load->view('header', $header);
+
+      //TRAZ O PRODUTO PROCURADO
+      $data['produto'] = $json;
+
+      //CONTENT DA PÁGINA (HOME)
+      $this->load->view('busca', $data);
+      $this->load->view('footer');
    }
+
 }

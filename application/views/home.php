@@ -21,12 +21,14 @@
    <div class="card mb-4 box-shadow">
       <div class="card-header"><b>Busque pelo produto</b></div>
       <div class="card-body">
+         <?php echo form_open('busca')?>
          <div class="form-group">
             <input type="text" class="form-control" id="busca" name="titulo" placeholder="Qual produto está procurando?">
          </div>
          <div class="form-group">
-            <button type="button" class="btn btn-lg btn-block btn-danger searchLogin"><i class="fa fa-search" aria-hidden="true"></i> Buscar produto</button>
+            <button type="submit" class="btn btn-lg btn-block btn-danger searchLogin"><i class="fa fa-search" aria-hidden="true"></i> Buscar produto</button>
          </div>
+         <?php echo form_close()?>
       </div>
    </div>
 
@@ -57,7 +59,7 @@
                   <input type="hidden" name="id_produto" value="<?php echo $produto->id ?>">
                   <input type="hidden" name="nome_produto" value="<?php echo $produto->login ?>">
                   <input type="hidden" name="info_produto" value="<?php echo $produto->url ?>">
-                  <button type="submit" class="btn btn-lg btn-block btn-success"><i class="fa fa-cart-plus" aria-hidden="true"></i> Comprar</button>
+                  <button type="submit" class="btn btn-lg btn-block btn-success"><i class="fa fa-cart-plus" aria-hidden="true"></i> Adic. Carrinho</button>
                   <?php echo form_close() ?>
                </div>
             </div>
