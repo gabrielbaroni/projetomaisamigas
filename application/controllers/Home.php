@@ -31,5 +31,4 @@ class Home extends CI_Controller {
       $json = file_get_contents($url, false, stream_context_create($opts));
       return json_decode($json);
    }
-
 }
