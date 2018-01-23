@@ -54,7 +54,7 @@ class Carrinho extends CI_Controller {
          foreach ($this->cart->contents() as $produto) {
             $dados = array('nome_produto' => $produto['name'],
                 'quantidade' => $produto['qty'],
-                'info_produto' => $produto['name']
+                'info_produto' => $produto['info_produto']
             );
 
             $this->db->insert('compras_maisamigas', $dados);
